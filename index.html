@@ -1,0 +1,1596 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#102a43">
+<meta name="description" content="IComm Innovation Communications provides telecommunications, electrical engineering, digital systems and technical support in Papua New Guinea.">
+<title>IComm | Innovation Communications</title>
+
+<style>
+:root {
+  --navy: #102a43;
+  --navy2: #183e5a;
+  --teal: #00a99d;
+  --teal-light: #e7f8f5;
+  --white: #ffffff;
+  --background: #f5f8fb;
+  --text: #243b53;
+  --muted: #627d98;
+  --border: #d9e2ec;
+  --shadow: 0 12px 35px rgba(16,42,67,.09);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--white);
+  color: var(--text);
+  line-height: 1.65;
+}
+
+button, input, select, textarea { font: inherit; }
+
+button, a { -webkit-tap-highlight-color: transparent; }
+
+a { color: inherit; text-decoration: none; }
+
+button { cursor: pointer; }
+
+.container {
+  width: min(1160px, 92%);
+  margin: auto;
+}
+
+.topbar {
+  background: var(--navy);
+  color: #d9e8f5;
+  font-size: 12px;
+  padding: 8px 0;
+}
+
+.topbar .container {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255,255,255,.97);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+}
+
+.nav {
+  min-height: 78px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  flex-shrink: 0;
+}
+
+.brand-mark {
+  width: 45px;
+  height: 45px;
+  display: grid;
+  place-items: center;
+  color: white;
+  background: var(--navy);
+  border-radius: 12px;
+  font-size: 23px;
+  font-weight: 900;
+  letter-spacing: -2px;
+  border-bottom: 3px solid var(--teal);
+}
+
+.brand-name {
+  font-size: 23px;
+  font-weight: 800;
+  color: var(--navy);
+  line-height: 1.1;
+}
+
+.brand-name span { color: var(--teal); }
+
+.brand-sub {
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  margin-top: 5px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 23px;
+}
+
+.nav-links a {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text);
+  transition: color .2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active { color: var(--teal); }
+
+.nav-links .nav-cta {
+  padding: 12px 17px;
+  border-radius: 6px;
+  background: var(--teal);
+  color: white;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--navy);
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 21px;
+}
+
+.page { display: none; min-height: 65vh; }
+.page.active { display: block; animation: appear .3s ease; }
+
+@keyframes appear {
+  from { opacity: .4; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero {
+  background:
+    linear-gradient(100deg, rgba(8,29,48,.96), rgba(16,42,67,.84) 58%, rgba(0,169,157,.45)),
+    radial-gradient(ellipse at 80% 25%, #287b85, transparent 50%),
+    var(--navy);
+  color: white;
+  padding: 95px 0 85px;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  right: -90px;
+  bottom: -210px;
+  width: 520px;
+  height: 520px;
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 50%;
+  box-shadow: 0 0 0 45px rgba(255,255,255,.025),
+              0 0 0 90px rgba(255,255,255,.025);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+}
+
+.eyebrow {
+  display: inline-block;
+  color: #72e4d9;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.hero h1 {
+  font-size: clamp(36px, 5.2vw, 65px);
+  line-height: 1.1;
+  letter-spacing: -1.8px;
+  margin: 0 0 24px;
+  max-width: 780px;
+}
+
+.hero h1 span { color: #65ddd2; }
+
+.hero p {
+  color: #d4e2ee;
+  font-size: 17px;
+  max-width: 620px;
+  margin-bottom: 30px;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 0;
+  border-radius: 6px;
+  padding: 13px 20px;
+  font-weight: 700;
+  font-size: 14px;
+  transition: .2s;
+}
+
+.btn:hover { transform: translateY(-2px); }
+
+.btn-primary {
+  background: var(--teal);
+  color: white;
+}
+
+.btn-primary:hover { background: #008d83; }
+
+.btn-outline {
+  color: white;
+  border: 1px solid rgba(255,255,255,.5);
+  background: transparent;
+}
+
+.btn-outline:hover { background: rgba(255,255,255,.1); }
+
+.btn-dark {
+  background: var(--navy);
+  color: white;
+}
+
+.btn-light {
+  background: white;
+  color: var(--navy);
+  border: 1px solid var(--border);
+}
+
+.trust-strip {
+  background: var(--teal-light);
+  padding: 22px 0;
+}
+
+.trust-items {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 15px;
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.check {
+  color: var(--teal);
+  font-size: 21px;
+  font-weight: 900;
+}
+
+.section { padding: 75px 0; }
+
+.section-soft { background: var(--background); }
+
+.section-heading {
+  max-width: 700px;
+  margin: 0 auto 38px;
+  text-align: center;
+}
+
+.kicker {
+  color: var(--teal);
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.section-heading h2,
+.content-heading {
+  color: var(--navy);
+  font-size: clamp(27px, 3.3vw, 40px);
+  line-height: 1.2;
+  letter-spacing: -.7px;
+  margin: 10px 0 15px;
+}
+
+.section-heading p,
+.lead {
+  color: var(--muted);
+  margin: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 22px;
+}
+
+.card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  padding: 27px;
+  transition: .25s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+  border-color: #a8ded9;
+}
+
+.card-icon {
+  width: 49px;
+  height: 49px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: var(--teal-light);
+  color: #008f85;
+  font-size: 23px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.card h3 {
+  font-size: 18px;
+  color: var(--navy);
+  margin: 0 0 10px;
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 14px;
+  margin: 0 0 15px;
+}
+
+.text-link {
+  color: #008f85;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  background: none;
+  border: 0;
+  padding: 0;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 55px;
+}
+
+.feature-panel {
+  min-height: 320px;
+  border-radius: 14px;
+  background:
+    linear-gradient(140deg, rgba(16,42,67,.94), rgba(0,169,157,.75)),
+    var(--navy);
+  padding: 35px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.feature-panel h3 {
+  font-size: 28px;
+  line-height: 1.2;
+  margin: 0 0 15px;
+}
+
+.feature-panel p { color: #d9e9f0; }
+
+.feature-list {
+  padding: 0;
+  list-style: none;
+}
+
+.feature-list li {
+  padding: 9px 0;
+  border-bottom: 1px solid rgba(255,255,255,.13);
+}
+
+.feature-list li::before {
+  content: "✓";
+  color: #70e3d7;
+  margin-right: 11px;
+  font-weight: bold;
+}
+
+.content-page { padding: 60px 0 75px; }
+
+.page-banner {
+  padding: 54px 0;
+  background: var(--navy);
+  color: white;
+}
+
+.page-banner h1 {
+  font-size: clamp(32px,4vw,46px);
+  margin: 0 0 10px;
+  line-height: 1.2;
+}
+
+.page-banner p {
+  color: #d4e2ee;
+  max-width: 680px;
+  margin: 0;
+}
+
+.breadcrumb {
+  color: #6ee0d4;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.about-copy p { color: var(--muted); }
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.info-box {
+  padding: 19px;
+  background: var(--background);
+  border-radius: 8px;
+  border-left: 3px solid var(--teal);
+}
+
+.info-box h3 { margin: 0 0 5px; color: var(--navy); font-size: 16px; }
+.info-box p { font-size: 13px; margin: 0; }
+
+.service-list {
+  margin: 12px 0 0;
+  padding-left: 19px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.service-list li { margin: 5px 0; }
+
+.project-tag {
+  display: inline-block;
+  padding: 5px 9px;
+  background: var(--teal-light);
+  color: #007d74;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  margin-bottom: 12px;
+}
+
+.project-note {
+  background: #fff9e8;
+  border: 1px solid #f0e2b8;
+  border-radius: 8px;
+  padding: 15px;
+  color: #6e5b25;
+  font-size: 13px;
+  margin-bottom: 25px;
+}
+
+.cta {
+  padding: 53px 0;
+  background: var(--teal);
+  color: white;
+}
+
+.cta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+}
+
+.cta h2 { font-size: 29px; line-height: 1.2; margin: 0 0 8px; }
+.cta p { margin: 0; color: #e2fffb; }
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 35px;
+  align-items: start;
+}
+
+.contact-panel {
+  background: var(--navy);
+  color: white;
+  border-radius: 12px;
+  padding: 30px;
+}
+
+.contact-panel h2 { margin-top: 0; }
+
+.contact-detail {
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(255,255,255,.15);
+}
+
+.contact-detail strong {
+  display: block;
+  color: #70e3d7;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+.contact-detail span { color: #e0ebf3; font-size: 14px; }
+
+.form-panel {
+  padding: 30px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: white;
+}
+
+.form-panel h2 { margin-top: 0; color: var(--navy); }
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 17px;
+}
+
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field.full { grid-column: 1 / -1; }
+
+.field label {
+  font-size: 12px;
+  color: var(--navy);
+  font-weight: 700;
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  outline: none;
+  color: var(--text);
+  background: white;
+  font-size: 14px;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: var(--teal);
+  box-shadow: 0 0 0 3px rgba(0,169,157,.1);
+}
+
+.field textarea { resize: vertical; min-height: 130px; }
+
+.form-hint {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 12px 0;
+}
+
+footer {
+  background: #0b2033;
+  color: #c8d6e5;
+  padding: 48px 0 18px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 40px;
+  padding-bottom: 35px;
+}
+
+footer .brand-name { color: white; }
+footer .brand-sub { color: #9fb3c8; }
+footer h3 { color: white; font-size: 14px; }
+footer p, footer a { font-size: 13px; color: #b5c7d8; }
+footer a:hover { color: #70e3d7; }
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,.12);
+  padding-top: 17px;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+  font-size: 11px;
+  color: #8da6bc;
+}
+
+.toast {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 200;
+  background: var(--navy);
+  color: white;
+  border-left: 4px solid var(--teal);
+  padding: 15px 20px;
+  border-radius: 7px;
+  box-shadow: var(--shadow);
+  max-width: 350px;
+  display: none;
+}
+
+.toast.show { display: block; }
+
+@media (max-width: 900px) {
+  .nav-links { gap: 13px; }
+  .nav-links a { font-size: 12px; }
+  .grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .split { gap: 28px; }
+}
+
+@media (max-width: 700px) {
+  .topbar .container { justify-content: center; text-align: center; }
+  .nav { min-height: 70px; }
+  .menu-toggle { display: block; }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    padding: 18px 5%;
+    background: white;
+    border-bottom: 1px solid var(--border);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    box-shadow: var(--shadow);
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a { padding: 12px 0; font-size: 14px; }
+  .nav-links .nav-cta { text-align: center; margin-top: 8px; }
+  .hero { padding: 70px 0 65px; }
+  .hero h1 { letter-spacing: -.7px; }
+  .hero p { font-size: 15px; }
+  .trust-items { grid-template-columns: repeat(2,1fr); }
+  .section { padding: 55px 0; }
+  .grid { grid-template-columns: 1fr; }
+  .split, .contact-layout { grid-template-columns: 1fr; }
+  .split { gap: 30px; }
+  .cta-row { flex-direction: column; align-items: flex-start; }
+  .footer-grid { grid-template-columns: 1fr; gap: 22px; }
+  .form-grid, .info-grid { grid-template-columns: 1fr; }
+  .field.full { grid-column: auto; }
+  .form-panel, .contact-panel { padding: 22px; }
+  .page-banner { padding: 42px 0; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+  <div class="container">
+    <span>Innovation Communications | Papua New Guinea</span>
+    <span>Telecommunications · Engineering · Digital Solutions</span>
+  </div>
+</div>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="#home" aria-label="IComm Home">
+      <div class="brand-mark">IC</div>
+      <div>
+        <div class="brand-name">I<span>Comm</span></div>
+        <div class="brand-sub">Innovation Communications</div>
+      </div>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle"
+      aria-label="Toggle navigation" aria-expanded="false">☰</button>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" data-page="home">Home</a>
+      <a href="#about" data-page="about">About</a>
+      <a href="#services" data-page="services">Services</a>
+      <a href="#projects" data-page="projects">Projects</a>
+      <a href="#contact" data-page="contact">Contact</a>
+      <a href="#quote" data-page="quote" class="nav-cta">Request a Quote</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- HOME PAGE -->
+<section class="page active" id="home">
+  <div class="hero">
+    <div class="container hero-content">
+      <div class="eyebrow">Technology. Engineering. Innovation.</div>
+      <h1>Connecting Technology with <span>Real Solutions.</span></h1>
+      <p>
+        IComm (Innovation Communications) delivers practical telecommunications
+        support, engineering services and digital business solutions for
+        organisations across Papua New Guinea.
+      </p>
+      <div class="actions">
+        <a href="#services" class="btn btn-primary">Explore Our Services →</a>
+        <a href="#contact" class="btn btn-outline">Talk to Our Team</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="trust-strip">
+    <div class="container trust-items">
+      <div class="trust-item"><span class="check">✓</span> Practical Solutions</div>
+      <div class="trust-item"><span class="check">✓</span> Technical Expertise</div>
+      <div class="trust-item"><span class="check">✓</span> Digital Innovation</div>
+      <div class="trust-item"><span class="check">✓</span> Customer-Focused Service</div>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <div class="kicker">What We Do</div>
+        <h2>Solutions Designed for Your Business</h2>
+        <p>We combine technical services and digital tools to help businesses
+          manage infrastructure, improve reporting and operate more efficiently.</p>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <div class="card-icon">⌁</div>
+          <h3>Telecommunications</h3>
+          <p>Technical support, infrastructure documentation, site reporting,
+            asset registers and maintenance coordination.</p>
+          <button class="text-link" data-go="services">Explore services →</button>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">ϟ</div>
+          <h3>Electrical & Power Systems</h3>
+          <p>Power-system assessments, backup power reviews, battery monitoring
+            and maintenance reporting within our authorised scope.</p>
+          <button class="text-link" data-go="services">Explore services →</button>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">▦</div>
+          <h3>Digital Business Systems</h3>
+          <p>Custom dashboards, digital forms, fuel tracking, inventory
+            management and business reporting tools.</p>
+          <button class="text-link" data-go="services">Explore services →</button>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">⚙</div>
+          <h3>Maintenance & Asset Management</h3>
+          <p>Maintenance schedules, work orders, equipment records and
+            reporting systems to improve operational visibility.</p>
+          <button class="text-link" data-go="services">Explore services →</button>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">▤</div>
+          <h3>Procurement Support</h3>
+          <p>Supplier quotation coordination, equipment sourcing support,
+            bills of materials and spare-parts tracking.</p>
+          <button class="text-link" data-go="services">Explore services →</button>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">⌘</div>
+          <h3>Technical Consultancy</h3>
+          <p>Technical documentation, project coordination, operational
+            reviews and practical reporting solutions.</p>
+          <button class="text-link" data-go="services">Explore services →</button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="container split">
+      <div>
+        <div class="kicker">Why IComm</div>
+        <h2 class="content-heading">Technology That Works in the Real World</h2>
+        <p class="lead">
+          Our approach focuses on useful solutions, clear documentation
+          and services aligned with each customer's operational needs.
+        </p>
+        <ul class="service-list">
+          <li>Solutions designed around actual business requirements</li>
+          <li>Clear reporting and practical recommendations</li>
+          <li>Digital tools that support day-to-day operations</li>
+          <li>Scalable services for growing organisations</li>
+        </ul>
+        <br>
+        <a href="#about" class="btn btn-dark">Learn About IComm →</a>
+      </div>
+
+      <div class="feature-panel">
+        <div class="eyebrow">Our Commitment</div>
+        <h3>Reliable Service.<br>Practical Innovation.</h3>
+        <p>We aim to help organisations make informed decisions,
+          manage their assets and improve operational performance.</p>
+        <ul class="feature-list">
+          <li>Professional service delivery</li>
+          <li>Transparent project scope</li>
+          <li>Continuous improvement</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container cta-row">
+      <div>
+        <h2>Have a project in mind?</h2>
+        <p>Tell us what your business needs. Let's discuss a practical solution.</p>
+      </div>
+      <a href="#quote" class="btn btn-light">Request a Quote →</a>
+    </div>
+  </section>
+</section>
+
+<!-- ABOUT PAGE -->
+<section class="page" id="about">
+  <div class="page-banner">
+    <div class="container">
+      <div class="breadcrumb">IComm / About Us</div>
+      <h1>About Innovation Communications</h1>
+      <p>Combining technical services and digital innovation to support
+        business operations in Papua New Guinea.</p>
+    </div>
+  </div>
+
+  <section class="content-page">
+    <div class="container split">
+      <div class="about-copy">
+        <div class="kicker">Who We Are</div>
+        <h2 class="content-heading">A Practical Approach to Engineering and Technology</h2>
+        <p>
+          IComm, short for Innovation Communications, is a business concept
+          focused on telecommunications-related services, engineering support,
+          digital systems and operational reporting.
+        </p>
+        <p>
+          Our aim is to help businesses address everyday operational challenges
+          through appropriate technical support, better information management
+          and dependable service delivery.
+        </p>
+        <p>
+          Based in Lae, Morobe Province, IComm intends to serve businesses
+          and organisations in Papua New Guinea, subject to project scope,
+          capability and availability.
+        </p>
+      </div>
+
+      <div class="feature-panel">
+        <div class="eyebrow">Our Direction</div>
+        <h3>Innovation With Purpose</h3>
+        <p>We believe technology should solve a real problem, make work easier
+          and support better decisions.</p>
+        <ul class="feature-list">
+          <li>Practical engineering solutions</li>
+          <li>Useful digital tools</li>
+          <li>Responsive customer service</li>
+          <li>Responsible business growth</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container" style="margin-top:55px">
+      <div class="grid">
+        <div class="info-box">
+          <h3>Our Mission</h3>
+          <p>To provide practical technical and digital solutions that help
+            customers improve operational efficiency and manage information.</p>
+        </div>
+        <div class="info-box">
+          <h3>Our Vision</h3>
+          <p>To develop into a trusted Papua New Guinean provider of
+            engineering support and business technology solutions.</p>
+        </div>
+        <div class="info-box">
+          <h3>Our Values</h3>
+          <p>Integrity, accountability, customer focus, safety and continuous
+            improvement guide our intended service standards.</p>
+        </div>
+        <div class="info-box">
+          <h3>Our Approach</h3>
+          <p>Understand the problem, agree on the scope, deliver the work,
+            document the results and support the customer.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container cta-row">
+      <div>
+        <h2>Let's work on your next project.</h2>
+        <p>Contact IComm to discuss your requirements.</p>
+      </div>
+      <a href="#contact" class="btn btn-light">Contact Us →</a>
+    </div>
+  </section>
+</section>
+
+<!-- SERVICES PAGE -->
+<section class="page" id="services">
+  <div class="page-banner">
+    <div class="container">
+      <div class="breadcrumb">IComm / Services</div>
+      <h1>Our Services</h1>
+      <p>Technical support, digital systems and business solutions tailored
+        to defined customer requirements.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid">
+        <article class="card">
+          <div class="card-icon">⌁</div>
+          <h3>Telecommunications Support</h3>
+          <p>Documentation and operational support for telecommunications
+            infrastructure and field activities.</p>
+          <ul class="service-list">
+            <li>Site asset registers</li>
+            <li>Infrastructure reporting</li>
+            <li>Maintenance coordination</li>
+            <li>Field activity documentation</li>
+          </ul>
+          <br><button class="text-link" data-quote="Telecommunications Support">Enquire about this service →</button>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">ϟ</div>
+          <h3>Electrical & Power Support</h3>
+          <p>Technical reviews and reporting for electrical and backup-power
+            systems, subject to required qualifications and authorisations.</p>
+          <ul class="service-list">
+            <li>Power-system condition reports</li>
+            <li>Battery and generator monitoring reviews</li>
+            <li>Earthing and surge protection assessments</li>
+            <li>Energy and maintenance records</li>
+          </ul>
+          <br><button class="text-link" data-quote="Electrical and Power Support">Enquire about this service →</button>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">▦</div>
+          <h3>Digital Systems Development</h3>
+          <p>Simple, practical digital tools for business operations and
+            management reporting.</p>
+          <ul class="service-list">
+            <li>Custom HTML dashboards</li>
+            <li>Digital forms and reports</li>
+            <li>Fuel and fleet tracking</li>
+            <li>Inventory and asset registers</li>
+          </ul>
+          <br><button class="text-link" data-quote="Digital Systems Development">Enquire about this service →</button>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">⚙</div>
+          <h3>Maintenance Management</h3>
+          <p>Tools and processes for recording maintenance activities and
+            tracking equipment condition.</p>
+          <ul class="service-list">
+            <li>Preventive maintenance schedules</li>
+            <li>Work orders and job records</li>
+            <li>Equipment service history</li>
+            <li>Monthly maintenance summaries</li>
+          </ul>
+          <br><button class="text-link" data-quote="Maintenance Management">Enquire about this service →</button>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">▤</div>
+          <h3>Procurement Coordination</h3>
+          <p>Assistance with supplier enquiries and documentation for approved
+            purchases.</p>
+          <ul class="service-list">
+            <li>Supplier quotation comparisons</li>
+            <li>Equipment sourcing coordination</li>
+            <li>Spare-parts registers</li>
+            <li>Purchase and delivery tracking</li>
+          </ul>
+          <br><button class="text-link" data-quote="Procurement Coordination">Enquire about this service →</button>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">⌘</div>
+          <h3>Technical Reporting & Consultancy</h3>
+          <p>Structured documentation and project support to help customers
+            organise technical information.</p>
+          <ul class="service-list">
+            <li>Technical reports</li>
+            <li>Project documentation</li>
+            <li>Operational reviews</li>
+            <li>Management dashboards</li>
+          </ul>
+          <br><button class="text-link" data-quote="Technical Reporting and Consultancy">Enquire about this service →</button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container cta-row">
+      <div>
+        <h2>Need a service tailored to your business?</h2>
+        <p>Describe the work and we can discuss the appropriate scope.</p>
+      </div>
+      <a href="#quote" class="btn btn-light">Request a Quote →</a>
+    </div>
+  </section>
+</section>
+
+<!-- PROJECTS PAGE -->
+<section class="page" id="projects">
+  <div class="page-banner">
+    <div class="container">
+      <div class="breadcrumb">IComm / Projects</div>
+      <h1>Projects & Capabilities</h1>
+      <p>Examples of project types IComm can develop or undertake as
+        customer requirements and delivery capacity are established.</p>
+    </div>
+  </div>
+
+  <section class="content-page">
+    <div class="container">
+      <div class="project-note">
+        <strong>Portfolio information:</strong> The examples below describe
+        potential project offerings, not completed customer projects.
+        Replace them with verified case studies after delivery and obtain
+        customer permission before publishing their names or data.
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <div class="project-tag">Digital Systems</div>
+          <h3>Fuel & Generator Dashboard</h3>
+          <p>A digital record system for generator refuelling, fuel usage,
+            service history and operating records.</p>
+          <p><strong>Potential outcome:</strong> Improved visibility of
+            fuel records and maintenance activities.</p>
+          <button class="text-link" data-quote="Fuel and Generator Dashboard">Discuss a similar project →</button>
+        </article>
+
+        <article class="card">
+          <div class="project-tag">Field Operations</div>
+          <h3>Maintenance Reporting System</h3>
+          <p>A work-order and reporting tool to capture equipment details,
+            activities, materials used and follow-up actions.</p>
+          <p><strong>Potential outcome:</strong> More consistent field
+            documentation.</p>
+          <button class="text-link" data-quote="Maintenance Reporting System">Discuss a similar project →</button>
+        </article>
+
+        <article class="card">
+          <div class="project-tag">Asset Management</div>
+          <h3>Equipment Register</h3>
+          <p>A centralised register for asset identifiers, locations,
+            maintenance schedules and service history.</p>
+          <p><strong>Potential outcome:</strong> Easier access to equipment
+            information and service records.</p>
+          <button class="text-link" data-quote="Equipment Asset Register">Discuss a similar project →</button>
+        </article>
+
+        <article class="card">
+          <div class="project-tag">Engineering Support</div>
+          <h3>Power-System Reporting</h3>
+          <p>Structured reporting for agreed inspections, observations,
+            maintenance needs and recommended actions.</p>
+          <p><strong>Potential outcome:</strong> Better organised technical
+            information for maintenance planning.</p>
+          <button class="text-link" data-quote="Power System Reporting">Discuss a similar project →</button>
+        </article>
+
+        <article class="card">
+          <div class="project-tag">Procurement</div>
+          <h3>Spare-Parts Tracking</h3>
+          <p>A digital record of requested materials, supplier quotations,
+            approvals, deliveries and usage.</p>
+          <p><strong>Potential outcome:</strong> Improved tracking of
+            procurement activities.</p>
+          <button class="text-link" data-quote="Spare Parts Tracking">Discuss a similar project →</button>
+        </article>
+
+        <article class="card">
+          <div class="project-tag">Business Reporting</div>
+          <h3>Management Dashboard</h3>
+          <p>A reporting interface that summarises operational information
+            for managers and business owners.</p>
+          <p><strong>Potential outcome:</strong> Faster access to key
+            operational records.</p>
+          <button class="text-link" data-quote="Management Dashboard">Discuss a similar project →</button>
+        </article>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- CONTACT PAGE -->
+<section class="page" id="contact">
+  <div class="page-banner">
+    <div class="container">
+      <div class="breadcrumb">IComm / Contact</div>
+      <h1>Contact IComm</h1>
+      <p>Contact us to discuss a service, project requirement or potential
+        business collaboration.</p>
+    </div>
+  </div>
+
+  <section class="content-page">
+    <div class="container contact-layout">
+      <div class="contact-panel">
+        <h2>Let's Talk Business</h2>
+        <p style="color:#d4e2ee;font-size:14px">
+          Send us a message with your requirements. We can discuss the
+          project scope, timing and next steps.
+        </p>
+
+        <div class="contact-detail">
+          <strong>Business Name</strong>
+          <span>IComm — Innovation Communications</span>
+        </div>
+        <div class="contact-detail">
+          <strong>Location</strong>
+          <span>Lae, Morobe Province, Papua New Guinea</span>
+        </div>
+        <div class="contact-detail">
+          <strong>Email</strong>
+          <span id="contactEmailDisplay">Add your business email</span>
+        </div>
+        <div class="contact-detail">
+          <strong>Phone</strong>
+          <span id="contactPhoneDisplay">Add your business phone</span>
+        </div>
+        <div class="contact-detail">
+          <strong>Business Hours</strong>
+          <span>By appointment and project arrangement</span>
+        </div>
+      </div>
+
+      <div class="form-panel">
+        <h2>Send an Enquiry</h2>
+        <p class="lead" style="font-size:13px;margin-bottom:22px">
+          Complete the form to prepare your enquiry.
+        </p>
+
+        <form id="contactForm">
+          <div class="form-grid">
+            <div class="field">
+              <label for="contactName">Full Name *</label>
+              <input id="contactName" name="name" required autocomplete="name">
+            </div>
+            <div class="field">
+              <label for="contactCompany">Company</label>
+              <input id="contactCompany" name="company" autocomplete="organization">
+            </div>
+            <div class="field">
+              <label for="contactEmail">Email Address *</label>
+              <input id="contactEmail" name="email" type="email" required autocomplete="email">
+            </div>
+            <div class="field">
+              <label for="contactPhone">Phone Number</label>
+              <input id="contactPhone" name="phone" type="tel" autocomplete="tel">
+            </div>
+            <div class="field full">
+              <label for="contactService">Service Required *</label>
+              <select id="contactService" name="service" required>
+                <option value="">Select a service</option>
+                <option>Telecommunications Support</option>
+                <option>Electrical and Power Support</option>
+                <option>Digital Systems Development</option>
+                <option>Maintenance Management</option>
+                <option>Procurement Coordination</option>
+                <option>Technical Reporting and Consultancy</option>
+                <option>Other Enquiry</option>
+              </select>
+            </div>
+            <div class="field full">
+              <label for="contactMessage">Your Message *</label>
+              <textarea id="contactMessage" name="message" required
+                placeholder="Describe your project or business requirements..."></textarea>
+            </div>
+            <div class="field full">
+              <button class="btn btn-primary" type="submit">Prepare Enquiry →</button>
+            </div>
+          </div>
+          <p class="form-hint">
+            This website prepares an email for you to send. It does not
+            transmit or store your enquiry on a server.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- QUOTE PAGE -->
+<section class="page" id="quote">
+  <div class="page-banner">
+    <div class="container">
+      <div class="breadcrumb">IComm / Request a Quote</div>
+      <h1>Request a Project Quote</h1>
+      <p>Tell us what you need, the project location and your expected
+        timeframe so the scope can be reviewed.</p>
+    </div>
+  </div>
+
+  <section class="content-page">
+    <div class="container contact-layout">
+      <div class="about-copy">
+        <div class="kicker">Your Project</div>
+        <h2 class="content-heading">Let's Understand the Requirements</h2>
+        <p>
+          Each quotation should be based on an agreed scope, delivery
+          requirements, resources and any site access or safety conditions.
+        </p>
+        <div class="info-box">
+          <h3>1. Submit your requirements</h3>
+          <p>Describe the problem, required service and expected outcome.</p>
+        </div>
+        <div class="info-box" style="margin-top:12px">
+          <h3>2. Scope review</h3>
+          <p>Clarify deliverables, location, timing and relevant constraints.</p>
+        </div>
+        <div class="info-box" style="margin-top:12px">
+          <h3>3. Quotation</h3>
+          <p>A price and delivery schedule can be prepared once the scope
+            and requirements have been reviewed.</p>
+        </div>
+      </div>
+
+      <div class="form-panel">
+        <h2>Quote Request Form</h2>
+        <form id="quoteForm">
+          <div class="form-grid">
+            <div class="field">
+              <label for="quoteName">Contact Name *</label>
+              <input id="quoteName" name="name" required>
+            </div>
+            <div class="field">
+              <label for="quoteCompany">Company Name</label>
+              <input id="quoteCompany" name="company">
+            </div>
+            <div class="field">
+              <label for="quoteEmail">Email *</label>
+              <input id="quoteEmail" name="email" type="email" required>
+            </div>
+            <div class="field">
+              <label for="quotePhone">Phone</label>
+              <input id="quotePhone" name="phone" type="tel">
+            </div>
+            <div class="field full">
+              <label for="quoteService">Required Service *</label>
+              <select id="quoteService" name="service" required>
+                <option value="">Select a service</option>
+                <option>Telecommunications Support</option>
+                <option>Electrical and Power Support</option>
+                <option>Digital Systems Development</option>
+                <option>Maintenance Management</option>
+                <option>Procurement Coordination</option>
+                <option>Technical Reporting and Consultancy</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="quoteLocation">Project Location *</label>
+              <input id="quoteLocation" name="location" required placeholder="e.g. Lae, Morobe">
+            </div>
+            <div class="field">
+              <label for="quoteBudget">Indicative Budget</label>
+              <select id="quoteBudget" name="budget">
+                <option value="">Prefer not to say</option>
+                <option>Below K1,000</option>
+                <option>K1,000–K5,000</option>
+                <option>K5,000–K15,000</option>
+                <option>K15,000–K50,000</option>
+                <option>Above K50,000</option>
+                <option>Budget to be discussed</option>
+              </select>
+            </div>
+            <div class="field full">
+              <label for="quoteTime">Expected Timeframe</label>
+              <select id="quoteTime" name="timeframe">
+                <option>As soon as practical</option>
+                <option>Within 2 weeks</option>
+                <option>Within 1 month</option>
+                <option>Within 3 months</option>
+                <option>Planning for a future project</option>
+              </select>
+            </div>
+            <div class="field full">
+              <label for="quoteDetails">Project Details *</label>
+              <textarea id="quoteDetails" name="details" required
+                placeholder="Describe the work, quantities, expected deliverables and other relevant details..."></textarea>
+            </div>
+            <div class="field full">
+              <button class="btn btn-primary" type="submit">Prepare Quote Request →</button>
+            </div>
+          </div>
+          <p class="form-hint">
+            Submission opens your email application. A quote is not
+            confirmed until the scope and price have been agreed.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="#home">
+          <div class="brand-mark">IC</div>
+          <div>
+            <div class="brand-name">I<span>Comm</span></div>
+            <div class="brand-sub">Innovation Communications</div>
+          </div>
+        </a>
+        <p style="max-width:350px;margin-top:18px">
+          Practical telecommunications, engineering support and digital
+          business solutions for Papua New Guinea.
+        </p>
+      </div>
+
+      <div>
+        <h3>Quick Links</h3>
+        <div class="footer-links">
+          <a href="#home">Home</a>
+          <a href="#about">About Us</a>
+          <a href="#services">Our Services</a>
+          <a href="#projects">Projects & Capabilities</a>
+          <a href="#contact">Contact</a>
+          <a href="#quote">Request a Quote</a>
+        </div>
+      </div>
+
+      <div>
+        <h3>Contact Information</h3>
+        <p>Lae, Morobe Province<br>Papua New Guinea</p>
+        <p id="footerEmail">Business email to be added</p>
+        <p id="footerPhone">Business phone to be added</p>
+        <a href="#quote">Discuss a project →</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> IComm — Innovation Communications.</span>
+      <span>Professional Service | Practical Innovation</span>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/*
+  ICOMM WEBSITE CONFIGURATION
+
+  Before publishing, replace the example email and phone below
+  with your real business contact details.
+*/
+const ICOMM = {
+  email: "YOUR_EMAIL@example.com",
+  phone: "+675 YOUR PHONE NUMBER"
+};
+
+const pageNames = [
+  "home", "about", "services", "projects", "contact", "quote"
+];
+
+const navLinks = document.getElementById("navLinks");
+const menuToggle = document.getElementById("menuToggle");
+const toast = document.getElementById("toast");
+
+function showToast(message) {
+  toast.textContent = message;
+  toast.classList.add("show");
+  clearTimeout(showToast.timer);
+  showToast.timer = setTimeout(() => {
+    toast.classList.remove("show");
+  }, 4000);
+}
+
+function navigateTo(page) {
+  if (!pageNames.includes(page)) page = "home";
+
+  if (location.hash !== "#" + page) {
+    location.hash = page;
+  } else {
+    renderPage();
+  }
+}
+
+function renderPage() {
+  let page = location.hash.replace("#", "") || "home";
+
+  if (!pageNames.includes(page)) page = "home";
+
+  document.querySelectorAll(".page").forEach(section => {
+    section.classList.toggle("active", section.id === page);
+  });
+
+  document.querySelectorAll("[data-page]").forEach(link => {
+    if (link.dataset.page === page) {
+      link.classList.add("active");
+      link.setAttribute("aria-current", "page");
+    } else {
+      link.classList.remove("active");
+      link.removeAttribute("aria-current");
+    }
+  });
+
+  navLinks.classList.remove("open");
+  menuToggle.setAttribute("aria-expanded", "false");
+  menuToggle.textContent = "☰";
+
+  window.scrollTo({ top: 0, behavior: "auto" });
+}
+
+window.addEventListener("hashchange", renderPage);
+
+menuToggle.addEventListener("click", () => {
+  const open = navLinks.classList.toggle("open");
+  menuToggle.setAttribute("aria-expanded", String(open));
+  menuToggle.textContent = open ? "✕" : "☰";
+});
+
+document.querySelectorAll("[data-go]").forEach(button => {
+  button.addEventListener("click", () => {
+    navigateTo(button.dataset.go);
+  });
+});
+
+document.querySelectorAll("[data-quote]").forEach(button => {
+  button.addEventListener("click", () => {
+    navigateTo("quote");
+    const service = document.getElementById("quoteService");
+    const requested = button.dataset.quote;
+    const match = [...service.options].find(
+      option => option.text.toLowerCase() === requested.toLowerCase()
+    );
+    if (match) service.value = match.value;
+    else service.value = "Other";
+  });
+});
+
+function configuredEmail() {
+  return ICOMM.email &&
+    ICOMM.email !== "YOUR_EMAIL@example.com" &&
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(ICOMM.email);
+}
+
+function updateContactDetails() {
+  const emailConfigured = configuredEmail();
+  const phoneConfigured = !ICOMM.phone.includes("YOUR PHONE NUMBER");
+
+  document.getElementById("contactEmailDisplay").textContent =
+    emailConfigured ? ICOMM.email : "Business email to be added";
+
+  document.getElementById("contactPhoneDisplay").textContent =
+    phoneConfigured ? ICOMM.phone : "Business phone to be added";
+
+  document.getElementById("footerEmail").textContent =
+    emailConfigured ? ICOMM.email : "Business email to be added";
+
+  document.getElementById("footerPhone").textContent =
+    phoneConfigured ? ICOMM.phone : "Business phone to be added";
+}
+
+/*
+  The forms prepare a message in the user's email application.
+  They do not send information to a server.
+*/
+function prepareEmail(subject, lines) {
+  if (!configuredEmail()) {
+    showToast("Please add your real business email in the ICOMM configuration before using the forms.");
+    return;
+  }
+
+  const body = lines.join("\n");
+  const mailto = "mailto:" + ICOMM.email +
+    "?subject=" + encodeURIComponent(subject) +
+    "&body=" + encodeURIComponent(body);
+
+  window.location.href = mailto;
+}
+
+document.getElementById("contactForm").addEventListener("submit", event => {
+  event.preventDefault();
+
+  const form = event.currentTarget;
+  if (!form.reportValidity()) return;
+
+  const data = new FormData(form);
+
+  prepareEmail("IComm Website Enquiry - " + data.get("service"), [
+    "NEW WEBSITE ENQUIRY",
+    "",
+    "Name: " + data.get("name"),
+    "Company: " + (data.get("company") || "Not provided"),
+    "Email: " + data.get("email"),
+    "Phone: " + (data.get("phone") || "Not provided"),
+    "Service: " + data.get("service"),
+    "",
+    "MESSAGE:",
+    data.get("message")
+  ]);
+});
+
+document.getElementById("quoteForm").addEventListener("submit", event => {
+  event.preventDefault();
+
+  const form = event.currentTarget;
+  if (!form.reportValidity()) return;
+
+  const data = new FormData(form);
+
+  prepareEmail("IComm Quote Request - " + data.get("service"), [
+    "NEW QUOTATION REQUEST",
+    "",
+    "Contact: " + data.get("name"),
+    "Company: " + (data.get("company") || "Not provided"),
+    "Email: " + data.get("email"),
+    "Phone: " + (data.get("phone") || "Not provided"),
+    "Service: " + data.get("service"),
+    "Location: " + data.get("location"),
+    "Budget: " + (data.get("budget") || "Not provided"),
+    "Timeframe: " + data.get("timeframe"),
+    "",
+    "PROJECT DETAILS:",
+    data.get("details")
+  ]);
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+updateContactDetails();
+renderPage();
+</script>
+
+</body>
+</html>
